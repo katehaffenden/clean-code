@@ -19,7 +19,9 @@ class TipsProcessor
   end
 
   def tipper
-    @tipper ||= TipCalculator.new(form.amount, form.discount_percentage, form.tip_percentage)
+    @tipper ||= TipCalculator.new(amount: form.amount,
+                                  discount_percentage: form.discount_percentage,
+                                  tip_percentage: form.tip_percentage)
   end
 
   def total_amount
