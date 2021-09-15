@@ -18,14 +18,14 @@ class TipsProcessor
     "You tips have been processed. Total amount is: #{total_amount}"
   end
 
-  def tipper
-    @tipper ||= TipCalculator.new(amount: form.amount,
+  def tip_calculator
+    @tip_calculator ||= TipCalculator.new(amount: form.amount,
                                   discount_percentage: form.discount_percentage,
                                   tip_percentage: form.tip_percentage)
   end
 
   def total_amount
-    @tipper.total
+    @tip_calculator.total
   end
 
 end
