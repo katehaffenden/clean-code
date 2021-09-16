@@ -20,7 +20,8 @@ RETURN_CITY_STRATEGIES = [ReturnBerlinStrategy, ReturnMinskStrategy].freeze
 # not sure if this method works in it's current state, will city name be returned everytime regardless of the check?
 def call
   RETURN_CITY_STRATEGIES.each do |strategy|
-    strategy.new.contains?(address).city_name
+    strategy.new
+    return strategy.city_name if strategy.contains?(address)
   end
 end
 
